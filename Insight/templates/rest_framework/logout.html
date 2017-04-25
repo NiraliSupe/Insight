@@ -1,0 +1,45 @@
+{% extends "rest_framework/base.html" %}
+{% load staticfiles %}
+{% load static from staticfiles %}
+{% load rest_framework %}
+
+<title>{% block title %}{% if name %}{{ name }} – {% endif %}Nirali Supe{% endblock %}</title>
+
+{% block style %}
+     <link rel="icon" href="{% static "rest_framework/img/favicon.ico" %}" type="image/x-icon"/>
+     <link rel="icon" href="{%  static "rest_framework/img/favicon.ico" %}" type="image/x-icon"/>
+        {% block bootstrap_theme %}
+          <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap.min.css" %}"/>
+          <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap-tweaks.css" %}"/>
+        {% endblock %}
+
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/prettify.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/default.css" %}"/>
+{% endblock %}
+
+{% block body %}
+<body class="container">
+  <div class="container-fluid" style="margin-top: 30px; ">
+    <div class="row-fluid" >
+      <div class="well" style="width: 910px; height=455%; margin-left: auto; margin-right: auto; background-color:#2c3e50;">
+        <div class="row-fluid" >
+          <div >
+            {% block branding %}
+               <p style="text-align:center; vertical-align: middle;"> 
+                  <p style="text-align:center; vertical-align: middle;color:white; font-family:'Comic Sans MS', cursive, sans-serif">You have successfully logged out </p>
+                  <p style="text-align:center; vertical-align: middle;color:white; font-family:'Comic Sans MS', cursive, sans-serif" >Login again <a href="{% url 'api:docs' %}">here</a></p>
+               </p>
+             {% endblock %}
+          </div>
+        </div><!-- /row fluid -->
+
+        <div class="row-fluid">
+          <div>
+          </div>
+        </div><!-- /.row-fluid -->
+      </div><!--/.well-->
+    </div><!-- /.row-fluid -->
+  </div><!-- /.container-fluid -->
+</body>
+{% endblock %}
+

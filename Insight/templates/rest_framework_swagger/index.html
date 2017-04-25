@@ -1,0 +1,37 @@
+{% extends "rest_framework_swagger/base.html" %}
+{% load static from staticfiles %}
+{% block header %}
+<div id='header' style='background-color:#2c3e50;!important'>
+  <div class="swagger-ui-wrap">
+    {% block logo %}
+      <a id="logo"><span class="logo__title">Insight</span></a>
+    {% endblock %}
+    <form id='api_selector'>
+      <input id="input_baseUrl" name="baseUrl" type="hidden"/>
+      {% if USE_SESSION_AUTH %}
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+          <div class="input">
+            {% block user_context_message %}
+              {# Override this block to customize #}
+              Hello, {{ request.user }}
+            {% endblock %}
+          </div>
+        {% endif %}
+        {% block extra_nav %}
+          {# Override this block to add more buttons, content to nav bar. #}
+        {% endblock %}
+      {% endif %}
+
+      {% if USE_SESSION_AUTH %}
+        {% if request.user.is_authenticated %}
+          <div class='input'><a id="auth" class="header__btn" style='background-color:#2c3e50;'  href="{% url 'logout' %}" data-sw-translate>Logout</a></div>
+        {% else %}
+          <div class='input'><a id="auth" class="header__btn" style='background-color:#2c3e50;' href="{{ LOGIN_URL }}?next={{ request.path }}" data-sw-translate>Login</a></div>
+       
+        {% endif %}
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock %}

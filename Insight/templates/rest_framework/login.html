@@ -1,0 +1,18 @@
+{% extends "rest_framework/login_base.html" %}
+{% load static from staticfiles %}
+
+<title>{% block title %}{% if name %}{{ name }} – {% endif %}Nirali Supe{% endblock %}</title>
+{% block style %}
+     <link rel="icon" href="{% static "rest_framework/img/favicon.ico" %}" type="image/x-icon"/>
+     <link rel="icon" href="{%  static "rest_framework/img/favicon.ico" %}" type="image/x-icon"/>
+        {% block bootstrap_theme %}
+          <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap.min.css" %}"/>
+          <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap-tweaks.css" %}"/>
+        {% endblock %}
+
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/prettify.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/default.css" %}"/>
+{% endblock %}
+<div>
+     {% block branding %}<h3 style="margin: 0 0 20px;">Please login</h3>{% endblock %}
+</div>
