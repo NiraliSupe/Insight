@@ -4,7 +4,7 @@
 **Available objects through API:**         
 1. User            
 
-API documentation available at : http://localhost:port/api/docs/                 
+API documentation available at : http://host:port/api/docs/                 
                       
 **Requirements:**         
 Python 3.4.+         
@@ -14,14 +14,12 @@ djangorestframework&nbsp;&nbsp;: pip install djangorestframework
 
 **Installation instructions:**              
 1.  Install virtual  environment for Python 3.4.+               
-&nbsp;&nbsp;&nbsp;&nbsp;Important Note: pyvenv and venv package does not have activate_this.py.                      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So Borrow a copy of activate_this.py from a virtualenv based environment and paste at  <virtualEnv path>/bin/activate_this.py                 
 2.  Install Django, Djangorest framework in virtual env            
 3.  Pull the github content             
   											   
 **Python commands to access user api:**     
-auth = HTTPBasicAuth(username, password)                                       
- 
+auth = HTTPBasicAuth(username, password)                                          
+
     Steps                                    |  Corresponding commands    
 ---------------------------------------------|----------------------------------------------------------------------------------------------------------  
 Get All records for customer by field        | requests.get('https://host/api/user?gender=Female', auth=auth)   
