@@ -19,9 +19,6 @@ djangorestframework&nbsp;&nbsp;: pip install djangorestframework
   											   
 **Python commands to access user api:**     
 auth = HTTPBasicAuth(username, password)                                          
-
-    Steps                                    |  Corresponding commands    
----------------------------------------------|----------------------------------------------------------------------------------------------------------  
 Get All records for customer by field        | requests.get('https://host/api/user?gender=Female', auth=auth)   
 Create record                                | requests.post('https://host/api/user/',   headers=auth, data={field : value})   
 Get specific record                          | requests.get('https://host/api/user/id/', auth=auth)      
